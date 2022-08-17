@@ -1,1 +1,27 @@
-<p>todolist works!</p>
+<div>
+    <table class="cf-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>Done</th>
+                <th>Button</th>
+                <th>Button</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todoItem of todoList">
+                <td>{{todoItem.todoId}}</td>
+                <td>{{todoItem.text}}</td>
+                <td>
+                    <span *ngIf="todoItem.done">Igen</span>
+                    <span *ngIf="!todoItem.done">Nem</span>
+                </td>
+                <td><button cfButton [severity]="'success'" [label]="'Szerkesztés'" (click)="openTodoEditor(todoItem.todoId)"></button></td>
+                <td><button cfButton [severity]="'danger'" [label]="'Törlés'" (click)="deleteTodoItem(todoItem.todoId)"></button></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <button cfButton [severity]="'success'" [label]="'Új elem hozzáadása'" (click)="openTodoEditor()"></button>
+</div>

@@ -8,6 +8,7 @@ import { TodolistComponent } from './components/todolist/todolist.component';
 import { TodoeditorComponent } from './components/todoeditor/todoeditor.component';
 import { ButtonModule, CheckboxModule, InputTextModule } from 'codefoxui';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     ButtonModule,
     CheckboxModule,
     InputTextModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

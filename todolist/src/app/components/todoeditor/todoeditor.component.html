@@ -1,1 +1,21 @@
-<p>todoeditor works!</p>
+<div class="cf-dialog-title">
+{{todoId === null ? "Új elem hozzáadása" : "Elem módosítása"}}
+</div>
+
+<form [formGroup]="formGroup">
+
+    <div>
+        <cf-inputtext [label]="'Text'" formControlName="text"></cf-inputtext>
+    </div>
+    <div>
+        <cf-inputtext [label]="'Description'" formControlName="description"></cf-inputtext>
+    </div>
+    <div>
+        <cf-checkbox [label]="'Kész'" formControlName="done"></cf-checkbox>
+    </div>
+
+    <span>
+        <button cfButton [severity]="'success'" [label]="'OK'" (click)="save()"></button>
+        <button cfButton [severity]="'danger'" [label]="'Mégse'" (click)="close()"></button>
+    </span>
+</form>
